@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { handleDownloadRequest } from './actions';
-import { Building2, MessageCircle, Heart, Sparkles, CheckCircle } from 'lucide-react';
+import { Building2, MessageCircle, Heart, Sparkles, CheckCircle, Mail, Phone } from 'lucide-react';
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -1051,9 +1051,7 @@ export default function Home() {
           <div className="synopsis-text">
             <p>
               Dans ce premier roman, Jović Nkili nous plonge dans l'univers 
-              parisien d'un jeune homme confronté à ses propres contradictions. 
-              Incapable de s'excuser, prisonnier de son orgueil, il voit ses 
-              relations s'effriter une à une.
+              parisien d'un jeune homme qui est doté d'un sensibilité humaine et qui voit les échecs des autres comme les siens et en culpabise presque.
             </p>
             <p>
               Au fil des pages, c'est un voyage intérieur qui se dessine — 
@@ -1140,20 +1138,17 @@ export default function Home() {
           Jović est joignable et répond à chaque message avec plaisir.
         </p>
         <div className="contact-links">
-          <a href="mailto:contact@jovicnkili.com" className="contact-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
+          <a href="mailto:jovicnkili@gmail.com" className="contact-link">
+            <Mail size={16} />
             Email
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="contact-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-            </svg>
-            Instagram
+          <a href="https://wa.me/237691523389" target="_blank" rel="noreferrer" className="contact-link">
+            <MessageCircle size={16} />
+            WhatsApp
+          </a>
+          <a href="tel:+237691523389" className="contact-link">
+            <Phone size={16} />
+            Appeler
           </a>
         </div>
       </section>
