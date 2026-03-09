@@ -22,7 +22,7 @@ export async function handleDownloadRequest(formData: FormData) {
   // Génération d'un token JWT signé, valable 15 minutes
   const token = await new SignJWT({ email, pseudo })
     .setProtectedHeader({ alg: 'HS256' })
-    .setExpirationTime('15m')
+    .setExpirationTime('1m')
     .setIssuedAt()
     .sign(SECRET);
 
