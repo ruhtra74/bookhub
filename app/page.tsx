@@ -1010,7 +1010,7 @@ export default function Home() {
           <div className="book-wrapper">
             <div className="book-glow" />
             <img
-              src="/book-cover.png"
+              src="/book-cover.jpeg"
               alt="Couverture du livre Désolé... ou presque"
               className="book-img"
               onError={(e) => {
