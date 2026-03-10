@@ -1068,8 +1068,7 @@ export default function Home() {
               découverte de sa propre vulnérabilité.
             </p>
             <p>
-              Un roman humain, sincère, et profondément touchant sur ce que 
-              signifie vraiment dire "je suis désolé."
+              Un roman humain, sincère, et profondément touchant qui dit tout haut se que les gens vivent en silence.
             </p>
           </div>
         </div>

@@ -21,14 +21,14 @@ export async function GET(req: NextRequest) {
 
   try {
     // Lit le fichier depuis le dossier privé (hors de /public)
-    const filePath = path.join(process.cwd(), 'private', 'chapter1.pdf');
+    const filePath = path.join(process.cwd(), 'private', 'livre.pdf');
     const fileBuffer = await readFile(filePath);
 
     return new NextResponse(fileBuffer, {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename="chapter1.pdf"',
+        'Content-Disposition': 'attachment; filename="livre.pdf"',
         // Empêche la mise en cache du lien sécurisé
         'Cache-Control': 'no-store',
       },
