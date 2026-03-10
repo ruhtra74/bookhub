@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { handleDownloadRequest } from './actions';
-import { Building2, MessageCircle, Heart, Sparkles, CheckCircle, Mail, Phone } from 'lucide-react';
+import { MessageCircle, Heart, Sparkles, CheckCircle, Mail, Phone, Download, ChevronDown } from 'lucide-react';
+import { EiffelTower } from '@/components/EiffelTowerIcon';
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -245,8 +246,9 @@ export default function Home() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 8px;
-          color: rgba(255,255,255,0.3);
+          justify-content: center;
+          gap: 12px;
+          color: rgba(255,255,255,0.4);
           font-size: 11px;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -254,17 +256,23 @@ export default function Home() {
         }
 
         .scroll-arrow {
-          width: 20px;
-          height: 20px;
-          border-right: 1px solid rgba(255,255,255,0.3);
-          border-bottom: 1px solid rgba(255,255,255,0.3);
-          transform: rotate(45deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
           animation: bounce 2s ease-in-out infinite;
         }
 
         @keyframes bounce {
-          0%, 100% { transform: rotate(45deg) translateY(0); }
-          50% { transform: rotate(45deg) translateY(6px); }
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(6px); }
+        }
+
+        @media (max-width: 480px) {
+          .scroll-hint {
+            bottom: 24px;
+            gap: 10px;
+            font-size: 10px;
+          }
         }
 
         /* SECTION BASE */
@@ -997,8 +1005,7 @@ export default function Home() {
           <p className="hero-subtitle-line">... ou presque.</p>
           <p className="hero-desc">
             Entre les ruelles pavées de Paris et les silences qui en disent trop, 
-            une histoire sur les excuses qu'on n'ose pas dire et les émotions 
-            qu'on apprend, trop tard, à apprivoiser.
+            une histoire sur les relations humaines, des personnages imparfaits des émotions palpables, un récit immersif.
           </p>
           <div className="hero-author">
             <div className="hero-author-line" />
@@ -1022,7 +1029,9 @@ export default function Home() {
 
         <div className="scroll-hint">
           <span>Découvrir</span>
-          <div className="scroll-arrow" />
+          <div className="scroll-arrow">
+            <ChevronDown size={24} strokeWidth={1.5} />
+          </div>
         </div>
       </section>
 
@@ -1068,7 +1077,7 @@ export default function Home() {
         <div className="synopsis-highlights">
           {[
             {
-              icon: Building2,
+              icon: EiffelTower,
               title: 'Paris comme décor vivant',
               desc: "Les rues, les cafés, la Seine — la ville devient un personnage à part entière dans ce récit.",
             },
@@ -1159,22 +1168,20 @@ export default function Home() {
         id="cta"
         data-animate
       >
-        <span className="section-tag">Lecture gratuite</span>
+        <span className="section-tag">Lecture</span>
         <h2 className="section-title">
           Prêt à découvrir<br />l'histoire ?
         </h2>
         <p className="cta-desc">
-          Téléchargez gratuitement le premier chapitre et laissez-vous emporter 
+          Téléchargez le livre et laissez-vous emporter 
           dans les rues de Paris.
         </p>
         <button className="cta-btn" onClick={() => setShowModal(true)}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M12 15V3M12 15l-4-4M12 15l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
-          </svg>
-          Télécharger le chapitre 1
+          <Download size={18} />
+          Télécharger le livre
         </button>
         <div style={{ marginTop: '24px' }}>
-          <span className="cta-free-badge"><Sparkles size={14} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }} /> 100% gratuit — aucun paiement requis</span>
+          <span className="cta-free-badge"><Sparkles size={14} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }} /> Édition 2026 — Accès exclusif aux lecteurs</span>
         </div>
       </section>
 
@@ -1201,7 +1208,7 @@ export default function Home() {
               />
               <div className="modal-book-info">
                 <h3>Désolé… ou presque.</h3>
-                <p>Chapitre 1 — PDF gratuit</p>
+                <p>Édition 2026</p>
               </div>
             </div>
 
@@ -1236,10 +1243,8 @@ export default function Home() {
                       </>
                     ) : (
                       <>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <path d="M12 15V3M12 15l-4-4M12 15l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
-                        </svg>
-                        Télécharger gratuitement
+                        <Download size={16} />
+                        Télécharger
                       </>
                     )}
                   </button>
