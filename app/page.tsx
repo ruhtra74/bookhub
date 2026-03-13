@@ -338,7 +338,7 @@ export default function Home() {
       <section className={`synopsis-section ${anim('synopsis')}`} id="synopsis" data-animate>
         <div>
           <span className="section-tag">Le roman</span>
-          <h2 className="section-title">Une histoire d'excuses et de résilience</h2>
+          <h2 className="section-title">Une histoire sur les fragiiltés humaines</h2>
           <div className="synopsis-text">
             <p>Dans ce premier roman, Jović Nkili nous plonge dans l'univers parisien d'un jeune homme doté d'une sensibilité humaine rare, qui voit les échecs des autres comme les siens et en culpabilise presque.</p>
             <p>Au fil des pages, c'est un voyage intérieur qui se dessine — entre regrets, rencontres inattendues et la difficile mais libératrice découverte de sa propre vulnérabilité.</p>
