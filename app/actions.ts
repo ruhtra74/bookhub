@@ -9,18 +9,14 @@ export async function handleDownloadRequest(formData: FormData) {
   const pseudo = formData.get('pseudo') as string;
   const email = formData.get('email') as string;
 
-  if (!pseudo || !email) {
-    return { success: false, error: 'Champs manquants.' };
+  // Si des infos sont fournies, on les enregistre (mais ce n'est plus obligatoire)
+  if (pseudo && email) {
+    await appendUserToSheet(pseudo, email);
+    // On ne bloque plus si l'enregistrement échoue
   }
 
-  const result = await appendUserToSheet(pseudo, email);
-
-  if (!result.success) {
-    return { success: false, error: 'Erreur lors de l\'enregistrement.' };
-  }
-
-  // Génération d'un token JWT signé, valable 15 minutes
-  const token = await new SignJWT({ email, pseudo })
+  // On génère le token dans tous les cas
+  const token = await new SignJWT({ email: email || 'anonyme', pseudo: pseudo || 'anonyme' })
     .setProtectedHeader({ alg: 'HS256' })
     .setExpirationTime('1m')
     .setIssuedAt()

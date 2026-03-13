@@ -375,8 +375,9 @@ export default function Home() {
       {/* CONTACT */}
       <section className={`contact-section ${anim('contact')}`} id="contact" data-animate>
         <span className="section-tag">Contact</span>
-        <h2 className="section-title">Échangeons ensemble</h2>
+        <h2 className="section-title">Échangeons et Travaillons Ensemble</h2>
         <p className="section-desc">Une question sur le livre ? Une envie de partager votre ressenti ?<br />Jović est joignable et répond à chaque message avec plaisir.</p>
+        <p className="section-desc">Vous avez envie de faire une oeuvre littérature, mais vous avez la flemme de l'écrire ? <br/> Contactez moi. Faites la présentation de votre histoire et je la produirai !!</p>
         <div className="contact-links">
           <a href="mailto:jovicnkili@gmail.com" className="contact-link"><Mail size={16} />Email</a>
           <a href="https://wa.me/237691523389" target="_blank" rel="noreferrer" className="contact-link"><MessageCircle size={16} />WhatsApp</a>
@@ -421,15 +422,15 @@ export default function Home() {
             {modalStep === 'form' && (
               <>
                 <h2>Obtenez votre accès</h2>
-                <p className="modal-subtitle">Renseignez vos informations pour accéder au livre PDF et aux chapitres audio.</p>
+                <p className="modal-subtitle">Renseignez vos informations pour que l'on reste en contact ou alors accéder au livre PDF et aux chapitres audio directement.</p>
                 <form action={clientAction}>
                   <div className="form-group">
                     <label>Pseudo</label>
-                    <input name="pseudo" type="text" required placeholder="Ex : JeanCode" />
+                    <input name="pseudo" type="text" placeholder="Ex : JeanCode" />
                   </div>
                   <div className="form-group">
                     <label>Email</label>
-                    <input name="email" type="email" required placeholder="jean@exemple.com" />
+                    <input name="email" type="email" placeholder="jean@exemple.com" />
                   </div>
                   <button type="submit" className="submit-btn" disabled={formStatus === 'loading'}>
                     {formStatus === 'loading'
